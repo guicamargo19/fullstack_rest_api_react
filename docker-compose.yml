@@ -15,7 +15,7 @@ services:
       - backend-network
       
   frontend:
-    build: ./frontend
+    build: ./front-end # aqui
     ports:
       - "3000:3000"
     networks:
@@ -28,7 +28,7 @@ services:
              python manage.py migrate &&
              python manage.py runserver 0.0.0.0:8000"
     volumes:
-      - .:/app
+      - ./back-end:/app # aqui
     ports:
       - "8000:8000"
     networks:
