@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import {useQuery} from 'react-query';
 import * as S from './styles'
 import RemoveProductButton from '../RemoveProductButton';
+import UpdateProductBotton from '../UpdateProductButton';
+import UpdateProductForm from '../UpdateProductForm';
 
 const fetchProducts = async () => {
     const response = await fetch('http://localhost:8000/api/products/');
@@ -14,11 +16,20 @@ const fetchProducts = async () => {
 
 const ProductsList = () => {
     const { data: products, isLoading, isError } = useQuery('products', fetchProducts);
+    const [selectedProductId, setSelectedProductId] = useState(null);
+
+    const handleUpdateProduct = (productId) => {
+        setSelectedProductId(productId);
+      };
+    
+      const handleCancelUpdate = () => {
+        setSelectedProductId(null);
+      };
 
     if (isLoading) return <S.Carregando>Carregando...</S.Carregando>;
     if (isError) return <S.Erro>Ocorreu um erro ao carregar os produtos...</S.Erro>;
 
-    console.log(products.length)
+    /* console.log(products.length) */
 
     return (
         <>
@@ -34,6 +45,17 @@ const ProductsList = () => {
                     <h2>
                         Lista de Produtos
                     </h2>
+                    {/* <S.ProductListContainer>
+                        <S.ProductContainer>
+                            <p>Nome:</p>
+                            <span>NAME PRODUCT</span>
+                            <p>Descrição:</p>
+                            <span className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus nesciunt ipsam totam quia facilis amet dignissimos neque reiciendis. Voluptates ipsum consequuntur distinctio error possimus illo cumque nulla, cum tempora mollitia.</span>
+                            <p>Preço:</p>
+                            <span>R$ VALUE</span>
+                            <RemoveProductButton productId={1}></RemoveProductButton>
+                        </S.ProductContainer>
+                    </S.ProductListContainer> */}
                     <S.ProductListContainer>
                         {products.map(product => (
                             <S.ProductContainer>
@@ -43,7 +65,17 @@ const ProductsList = () => {
                                 <span className="description">{product.description}</span>
                                 <p>Preço:</p>
                                 <span>R$ {product.value}</span>
-                                <RemoveProductButton productId={product.id}></RemoveProductButton>
+                                <div>
+                                    <RemoveProductButton productId={product.id} />
+                                    <UpdateProductBotton onClick={() => handleUpdateProduct(product.id)}/>
+                                </div>
+                                {selectedProductId === product.id && (
+                                    <UpdateProductForm
+                                    productId={product.id}
+                                    initialProduct={product}
+                                    onCancel={handleCancelUpdate}
+                                    />
+                                )}
                             </S.ProductContainer>
                         ))}
                     </S.ProductListContainer>

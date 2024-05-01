@@ -4,7 +4,7 @@ services:
   db-server:  # aqui
     image: postgres:latest
     environment:
-      POSTGRES_INITDB_DISABLE: 'true'
+      POSTGRES_INITDB_DISABLE: 'false'
       POSTGRES_DB: backend_db
       POSTGRES_USER: backend_user
       POSTGRES_PASSWORD: backend_password
