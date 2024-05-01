@@ -18,36 +18,37 @@ const ProductsList = () => {
     if (isLoading) return <S.Carregando>Carregando...</S.Carregando>;
     if (isError) return <S.Erro>Ocorreu um erro ao carregar os produtos...</S.Erro>;
 
+    console.log(products.length)
+
     return (
         <>
-        <h2>
-            Lista de Produtos
-        </h2>
-        {/* <S.ProductListContainer>
-            <S.ProductContainer>
-                <p>Nome:</p>
-                <span>NAME PRODUCT</span>
-                <p>Descrição:</p>
-                <span className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus nesciunt ipsam totam quia facilis amet dignissimos neque reiciendis. Voluptates ipsum consequuntur distinctio error possimus illo cumque nulla, cum tempora mollitia.</span>
-                <p>Preço:</p>
-                <span>R$ VALUE</span>
-                <RemoveProductButton productId={1}></RemoveProductButton>
-            </S.ProductContainer>
-        </S.ProductListContainer> */}
-
-        <S.ProductListContainer>
-            {products.map(product => (
-                <S.ProductContainer>
-                    <p>Nome:</p>
-                    <span key={product.id}>{product.name}</span>
-                    <p>Descrição:</p>
-                    <span className="description">{product.description}</span>
-                    <p>Preço:</p>
-                    <span>R$ {product.value}</span>
-                    <RemoveProductButton productId={product.id}></RemoveProductButton>
-                </S.ProductContainer>
-            ))}
-        </S.ProductListContainer>
+            {products.length === 0 ? (
+                <>
+                    <h2>
+                        Lista de Produtos
+                    </h2>
+                    <S.Erro>Não existem produtos cadastrados.</S.Erro>
+                </>
+            ) : (
+                <>
+                    <h2>
+                        Lista de Produtos
+                    </h2>
+                    <S.ProductListContainer>
+                        {products.map(product => (
+                            <S.ProductContainer>
+                                <p>Nome:</p>
+                                <span key={product.id}>{product.name}</span>
+                                <p>Descrição:</p>
+                                <span className="description">{product.description}</span>
+                                <p>Preço:</p>
+                                <span>R$ {product.value}</span>
+                                <RemoveProductButton productId={product.id}></RemoveProductButton>
+                            </S.ProductContainer>
+                        ))}
+                    </S.ProductListContainer>
+                </>
+            )}
         </>
     );
 };

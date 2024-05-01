@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'backend_db',  # Nome do banco de dados
         'USER': 'backend_user',  # Usuário do banco de dados
         'PASSWORD': 'backend_password',  # Senha do banco de dados
-        'HOST': 'db',  # Nome do serviço Docker Compose para o banco de dados
+        'HOST': 'db-server',  # Nome do serviço Docker Compose para o db
         'PORT': '5432',  # Porta padrão do PostgreSQL
     }
 }

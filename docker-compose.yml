@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  db:
+  db-server:  # aqui
     image: postgres:latest
     environment:
       POSTGRES_INITDB_DISABLE: 'true'
@@ -10,37 +10,37 @@ services:
       POSTGRES_PASSWORD: backend_password
     restart: always
     volumes:
-      - db-data:/var/lib/postgresql/data
+      - db-server-data:/var/lib/postgresql/data
     networks:
-      - backend-network
+      - back-end-server-network
       
-  frontend:
-    build: ./front-end # aqui
+  front-end-server:  # aqui
+    build: ./front-end
     ports:
       - "3000:3000"
     networks:
-      - frontend-network
+      - front-end-server-network
   
-  backend:
+  back-end-server:  # aqui
     build: .
     command: >
       sh -c "python manage.py makemigrations &&
              python manage.py migrate &&
              python manage.py runserver 0.0.0.0:8000"
     volumes:
-      - ./back-end:/app # aqui
+      - ./back-end:/app
     ports:
       - "8000:8000"
     networks:
-      - backend-network
+      - back-end-server-network
     depends_on:
-      - db
+      - db-server
 
 networks:
-  backend-network:
+  back-end-server-network:
     driver: bridge
-  frontend-network:
+  front-end-server-network:
     driver: bridge
 
 volumes:
-  db-data:
+  db-server-data:
