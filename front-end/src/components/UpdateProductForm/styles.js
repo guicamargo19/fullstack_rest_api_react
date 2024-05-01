@@ -60,19 +60,18 @@ export const ModalActions = styled.div`
     border: none;
     transition: all ease-in-out 0.2s;
     
-
     &:hover {
-      opacity: 70%;
+      opacity: 80%;
       transition: all ease-in-out 0.2s;
     }
 
     &[type=submit] {
-      background-color: darkgreen;
+      background-color: rgba(0,100,0, 0.8);
     }
 
     &[type=button] {
-      background-color: darkred;
-      margin-top: 10px;
+      background-color: rgba(70,130,180, 0.8);
+      margin-top: 6px;
     }
   }
 `;
@@ -81,7 +80,7 @@ export const CloseButton = styled.button`
   position: absolute;
   top: 10px;
   right: 10px;
-  background: none;
+  background-color: none !important;
   border: none;
   font-size: 20px;
   cursor: pointer;

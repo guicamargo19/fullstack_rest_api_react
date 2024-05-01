@@ -35,19 +35,46 @@ export const ProductContainer = styled.div`
     padding: 14px;
     height: 400px;
 
-
     &:hover {
         background-color: rgba(0,0,0,0.2);
         transition: all ease-in-out 0.2s;
     }
 `
 
-
 export const Carregando = styled.div`
     margin-top: 40px;
 `
 
-
 export const Erro = styled.div`
     margin-top: 40px;
+`
+
+export const ButtonsContainer = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+
+    button {
+        background-color: rgba(65,105,225, 0.8);
+        font-size: 26px;
+        text-transform: uppercase;
+        padding: 12px;
+        font-weight: bold;
+        transition: all ease-in-out 0.2s;
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+
+
+        &:hover {
+            opacity: 80%;
+            transition: all ease-in-out 0.2s;
+        }
+    }
+
+    .remove {
+        background-color: rgba(178,34,34, 0.8);
+    }
 `

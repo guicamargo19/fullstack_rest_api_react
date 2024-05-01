@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const ProductButtonContainer = styled.div`
   button {
     padding: 8px;
-    background-color: darkblue;
+    background-color: rgba(0,0,128,0.8);
     color: #fff;
     border: none;
     cursor: pointer;
@@ -13,7 +13,7 @@ export const ProductButtonContainer = styled.div`
     width: 300px;
 
     &:hover {
-        opacity: 70%;
+        opacity: 80%;
         transition: all ease-in-out 0.2s;
     }
   }

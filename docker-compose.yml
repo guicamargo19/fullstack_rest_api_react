@@ -1,10 +1,7 @@
-version: '3'
-
 services:
-  db-server:  # aqui
+  db-server:
     image: postgres:latest
     environment:
-      POSTGRES_INITDB_DISABLE: 'false'
       POSTGRES_DB: backend_db
       POSTGRES_USER: backend_user
       POSTGRES_PASSWORD: backend_password
@@ -14,14 +11,14 @@ services:
     networks:
       - back-end-server-network
       
-  front-end-server:  # aqui
+  front-end-server:
     build: ./front-end
     ports:
       - "3000:3000"
     networks:
       - front-end-server-network
   
-  back-end-server:  # aqui
+  back-end-server:
     build: .
     command: >
       sh -c "python manage.py makemigrations &&

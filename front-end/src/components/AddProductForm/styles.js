@@ -1,62 +1,88 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-export const FormContainer = styled.div`
-    margin-bottom: 20px;
-    margin: 0 auto;
-    background-color: rgba(0,0,0,0.1);
-    padding-bottom: 30px;
+export const ModalOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
-    form {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    }
+export const ModalContainer = styled.div`
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  width: 400px;
+`;
 
-    textarea {
-        resize: none;
-        height: 200px;
-        margin-bottom: 10px;
-        padding: 6px;
-        font-size: 14px;
-        width: 800px;
-        outline-color: #87baab;
-    }
+export const ModalTitle = styled.h2`
+  margin-bottom: 20px;
+`;
 
-    button {
-        padding: 8px;
-        background-color: #87baab;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-        transition: all ease-in-out 0.2s;
-        text-transform: uppercase;
-        width: 800px;
-
-        &:hover {
-            background-color: #326573;
-            transition: all ease-in-out 0.2s;
-        }
-    }
-`
-
-export const InputsNomeValor = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 800px;
-    gap: 20px;
-
-    input[type="text"],
-    input[type="number"]  {
-        margin-bottom: 10px;
-        padding: 6px;
-        font-size: 14px;
-        width: 390px;
-        outline-color: #87baab;
-    }
-`
-
-export const TextAreaGroup = styled.div`
+export const ModalContent = styled.div`
+  div {
     display: flex;
     flex-direction: column;
-`
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  textarea {
+    resize: none;
+    padding: 4px;
+    width: 100%
+  }
+
+  input {
+    padding: 4px;
+    width: 100%
+  }
+`;
+
+export const ModalActions = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+
+  button {
+    text-transform: uppercase;
+    padding: 6px;
+    color: #fff;
+    border: none;
+    transition: all ease-in-out 0.2s;
+    
+
+    &:hover {
+      opacity: 80%;
+      transition: all ease-in-out 0.2s;
+    }
+
+    &[type=submit] {
+      background-color: background-color: rgba(0,100,0, 0.8);
+    }
+
+    &[type=button] {
+      background-color: rgba(178,34,34, 0.8);
+      margin-top: 10px;
+    }
+  }
+`;
+
+export const CloseButton = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+`;
