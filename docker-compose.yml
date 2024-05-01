@@ -4,17 +4,29 @@ services:
   db:
     image: postgres:latest
     environment:
+      POSTGRES_INITDB_DISABLE: 'true'
       POSTGRES_DB: backend_db
       POSTGRES_USER: backend_user
       POSTGRES_PASSWORD: backend_password
+    restart: always
     volumes:
       - db-data:/var/lib/postgresql/data
     networks:
       - backend-network
       
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - frontend-network
+  
   backend:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: >
+      sh -c "python manage.py makemigrations &&
+             python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/app
     ports:
@@ -23,14 +35,6 @@ services:
       - backend-network
     depends_on:
       - db
-
-  frontend:
-    build: ./frontend
-    ports:
-      - "3000:3000"
-    networks:
-      - frontend-network
-
 
 networks:
   backend-network:

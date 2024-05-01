@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { useMutation } from 'react-query';
+import { useMutation, useQueryClient } from 'react-query';
 import * as S from './styles'
 
 const AddProductForm = () => {
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
     const [value, setValue] = useState('');
+    const queryClient = useQueryClient();
 
     const AddProduct = async () => {
         const response = await fetch('http://localhost:8000/api/products/', {
@@ -23,12 +24,18 @@ const AddProductForm = () => {
         if (!response.ok) {
             throw new Error('Falha ao adicionar o produto.');
         }
+        // Faz o refetch da query products depois do sucesso, atualizando a página.
+        queryClient.invalidateQueries('products');
+        // Limpa os campos do formulário
+        setName('');
+        setDescription('');
+        setValue('');
     };
 
     const {mutate, isLoading} = useMutation(AddProduct);
 
-    const handleSubmit = event => {
-        event.preventDefault();
+    const handleSubmit = (e) => {
+        e.preventDefault();
         mutate();
     };
 

@@ -1,8 +1,10 @@
 import * as S from './styles'
 import React from 'react';
-import { useMutation, queryCache } from 'react-query';
+import { useMutation, useQueryClient } from 'react-query';
 
 const RemoveProductButton = ({productId}) => {
+    const queryClient = useQueryClient();
+
     const removeProduct = async () => {
         const response = await fetch(`http://localhost:8000/api/products/${productId}`, {
             method: 'DELETE',
@@ -12,8 +14,8 @@ const RemoveProductButton = ({productId}) => {
             throw new Error('Falha ao remover o produto.');
         }
 
-        //Limpa o cache após a remoção do produto
-        queryCache.invalidateQueries('products');
+        // Refetch products query after mutation success
+        queryClient.invalidateQueries('products');
     };
 
     const { mutate, isLoading } = useMutation(removeProduct);
