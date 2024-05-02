@@ -1,4 +1,7 @@
-FROM python:3.12
+FROM python:3.12.0-alpine3.18
+LABEL mantainer="gui.ferreira.camargo@gmail.com"
+
+# FROM python:3.12
 
 # Python
 ENV PYTHONUNBUFFERED=1 \
@@ -14,7 +17,8 @@ WORKDIR /app
 COPY requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
-RUN apt-get update && apt-get install -y postgresql-client
+RUN apk update && \
+    apk add --no-cache postgresql-client
 
 EXPOSE 8000
 

@@ -10,8 +10,9 @@ export const ProductButtonContainer = styled.div`
     cursor: pointer;
     transition: all ease-in-out 0.2s;
     text-transform: uppercase;
-    margin-top: 20px;
-    width: 300px;
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
     border-radius: 4px;
 
     &:hover {

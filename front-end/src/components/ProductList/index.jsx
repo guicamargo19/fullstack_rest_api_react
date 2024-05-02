@@ -92,17 +92,26 @@ const ProductsList = () => {
         <S.ProductListContainer>
           {products.map((product) => (
             <S.ProductContainer key={product.id}>
-              <p>Nome:</p>
-              <span>{product.name}</span>
-              <p>Preço:</p>
-              <span>R$ {product.value}</span>
-              <p>Descrição:</p>
-              <span className="description">{product.description}</span>
               <div>
-                <RemoveProductButton productId={product.id} />
+                <S.DivNomePreco>
+                  <S.DivNome>
+                    <p>Nome:</p>
+                    <span>{product.name}</span>
+                  </S.DivNome>
+                  <S.DivPreco>
+                    <p>Preço:</p>
+                    <span>R$ {product.value}</span>
+                  </S.DivPreco>
+                </S.DivNomePreco>
+                <S.DivDescription>
+                  <span>{product.description}</span>
+                </S.DivDescription>
+              </div>
+              <div>
                 <UpdateProductButton
                   onClick={() => handleUpdateProduct(product.id)}
                 />
+                <RemoveProductButton productId={product.id} />
               </div>
               {selectedProductId === product.id && (
                 <UpdateProductForm

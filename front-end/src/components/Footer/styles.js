@@ -3,7 +3,7 @@ import { Colors } from '../../global'
 
 export const Footer = styled.footer`
   text-align: center;
-  padding: 60px;
+  padding: 100px 0 20px 0;
 
   a {
     color: ${Colors.blackColor};

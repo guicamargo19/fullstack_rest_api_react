@@ -11,14 +11,11 @@ export const ProductListContainer = styled.div`
 
   p {
     font-weight: bold;
+    padding-right: 14px;
   }
 
   span {
     text-align: justify;
-  }
-
-  .description {
-    height: 160px;
   }
 `
 
@@ -27,7 +24,7 @@ export const ProductContainer = styled.div`
   justify-content: space-between;
   background-color: ${Colors.bgProducts};
   padding: 14px;
-  height: 200px;
+  margin-bottom: 10px;
 
   &:hover {
     background-color: ${Colors.bgProductsHover};
@@ -41,6 +38,26 @@ export const Carregando = styled.div`
 
 export const Erro = styled.div`
   margin-top: 40px;
+`
+
+export const DivNomePreco = styled.div`
+  display: flex;
+  align-items: start;
+  width: 100%;
+`
+
+export const DivNome = styled.div`
+  display: flex;
+  margin-right: 20px;
+`
+
+export const DivPreco = styled.div`
+  display: flex;
+`
+
+export const DivDescription = styled.div`
+  margin-top: 20px;
+  width: 96%;
 `
 
 export const ButtonsContainer = styled.div`

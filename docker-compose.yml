@@ -6,18 +6,12 @@ services:
       POSTGRES_USER: backend_user
       POSTGRES_PASSWORD: backend_password
     restart: always
+    user: postgres
     volumes:
       - db-server-data:/var/lib/postgresql/data
     networks:
       - back-end-server-network
       
-  front-end-server:
-    build: ./front-end
-    ports:
-      - "3000:3000"
-    networks:
-      - front-end-server-network
-  
   back-end-server:
     build: .
     command: >
@@ -36,6 +30,13 @@ services:
       - back-end-server-network
     depends_on:
       - db-server
+
+  front-end-server:
+    build: ./front-end
+    ports:
+      - "3000:3000"
+    networks:
+      - front-end-server-network
 
 networks:
   back-end-server-network:
