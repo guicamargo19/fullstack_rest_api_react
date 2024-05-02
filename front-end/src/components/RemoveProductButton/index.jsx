@@ -2,6 +2,7 @@ import * as S from './styles'
 import React from 'react'
 import { useMutation, useQueryClient } from 'react-query'
 
+// eslint-disable-next-line react/prop-types
 const RemoveProductButton = ({ productId }) => {
   const queryClient = useQueryClient()
 

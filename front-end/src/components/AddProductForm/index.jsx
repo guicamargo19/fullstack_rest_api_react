@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useMutation, useQueryClient } from 'react-query'
 import * as S from './styles'
 
+// eslint-disable-next-line react/prop-types
 const AddProductForm = ({ onClose }) => {
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')

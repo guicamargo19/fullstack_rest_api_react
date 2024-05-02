@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useMutation, useQueryClient } from 'react-query'
 import * as S from './styles'
 
+// eslint-disable-next-line react/prop-types
 function UpdateProductForm({ productId, initialProduct = {}, onCancel }) {
   const queryClient = useQueryClient()
   const [formData, setFormData] = useState({
