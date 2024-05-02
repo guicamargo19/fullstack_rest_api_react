@@ -61,6 +61,7 @@ export const ModalActions = styled.div`
     border: none;
     transition: all ease-in-out 0.2s;
     cursor: pointer;
+    border-radius: 4px;
 
     &:hover {
       opacity: 80%;

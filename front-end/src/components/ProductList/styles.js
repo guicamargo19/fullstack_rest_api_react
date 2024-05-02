@@ -2,10 +2,7 @@ import styled from 'styled-components'
 import { Colors } from '../../global'
 
 export const ProductListContainer = styled.div`
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-  row-gap: 4px;
-  column-gap: 4px;
+  display: block;
 
   div {
     list-style: none;
@@ -14,8 +11,6 @@ export const ProductListContainer = styled.div`
 
   p {
     font-weight: bold;
-    margin-bottom: 4px;
-    margin-top: 4px;
   }
 
   span {
@@ -29,12 +24,10 @@ export const ProductListContainer = styled.div`
 
 export const ProductContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: space-between;
   background-color: ${Colors.bgProducts};
   padding: 14px;
-  height: 400px;
+  height: 200px;
 
   &:hover {
     background-color: ${Colors.bgProductsHover};
@@ -60,7 +53,7 @@ export const ButtonsContainer = styled.div`
   .remove,
   .add {
     background-color: ${Colors.submitButtonColor};
-    font-size: 26px;
+    font-size: 20px;
     text-transform: uppercase;
     padding: 12px;
     font-weight: bold;
@@ -68,6 +61,8 @@ export const ButtonsContainer = styled.div`
     cursor: pointer;
     border: none;
     border-radius: 4px;
+    margin-bottom: 30px;
+    color: ${Colors.whiteColor};
 
     &:hover {
       opacity: 80%;

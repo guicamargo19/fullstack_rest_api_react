@@ -7,10 +7,10 @@ export const Colors = {
   bgProducts: 'rgba(0,0,0,0.1)',
   bgProductsHover: 'rgba(0,0,0,0.2)',
   bgInputs: '#e7e7e7',
-  mainColor: '#155956',
-  submitButtonColor: 'rgba(0,100,0, 0.8)',
-  cancelButtonColor: 'rgba(178,34,34, 0.8)',
-  updateButtonColor: 'rgba(0,0,128,0.8)'
+  mainColor: '#0a3d62',
+  submitButtonColor: '#0a3d62',
+  cancelButtonColor: '#e55039',
+  updateButtonColor: '#079992'
 }
 
 export const EstiloGlobal = createGlobalStyle`
@@ -20,6 +20,11 @@ export const EstiloGlobal = createGlobalStyle`
         padding: 0;
         font-family: 'Open Sans', sans-sarif;
         list-style: none;
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
     }
 
     body {
@@ -41,7 +46,7 @@ export const EstiloGlobal = createGlobalStyle`
         }
 
         hr {
-            height: 6px;
+            height: 4px;
             width: 64%;
             margin-top: -43px;
             margin-bottom: 150px;
@@ -56,5 +61,6 @@ export const EstiloGlobal = createGlobalStyle`
             font-size: 30px;
         }
     }
+}
 
 `

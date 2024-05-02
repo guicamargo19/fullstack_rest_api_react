@@ -12,6 +12,7 @@ export const ProductButtonContainer = styled.div`
     text-transform: uppercase;
     margin-top: 20px;
     width: 300px;
+    border-radius: 4px;
 
     &:hover {
       opacity: 80%;

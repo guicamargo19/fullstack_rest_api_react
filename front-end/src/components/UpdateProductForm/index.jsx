@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useMutation, useQueryClient } from 'react-query'
-import * as S from './styles'
+import * as S from '../AddProductForm/styles'
 
 // eslint-disable-next-line react/prop-types
 function UpdateProductForm({ productId, initialProduct = {}, onCancel }) {
@@ -61,38 +61,41 @@ function UpdateProductForm({ productId, initialProduct = {}, onCancel }) {
         <S.ModalTitle>Atualizar produto</S.ModalTitle>
         <S.ModalContent>
           <form onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor="name">Nome:</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="description">Descrição:</label>
-              <textarea
-                id="description"
-                name="description"
-                value={formData.description}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="value">Valor:</label>
-              <input
-                type="number"
-                id="value"
-                name="value"
-                value={formData.value}
-                onChange={handleChange}
-              />
-            </div>
+            <S.DivInputs>
+              <S.DivNameValue>
+                <label htmlFor="name">Nome:</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  value={formData.name}
+                  onChange={handleChange}
+                />
+                <label htmlFor="value">Valor:</label>
+                <input
+                  type="number"
+                  id="value"
+                  name="value"
+                  required
+                  value={formData.value}
+                  onChange={handleChange}
+                />
+              </S.DivNameValue>
+              <S.DivTextArea>
+                <label htmlFor="description">Descrição:</label>
+                <textarea
+                  id="description"
+                  name="description"
+                  required
+                  value={formData.description}
+                  onChange={handleChange}
+                />
+              </S.DivTextArea>
+            </S.DivInputs>
             <S.ModalActions>
               <button type="submit" disabled={isLoading}>
-                Atualizar Produto
+                Atualizar produto
               </button>
               <button type="button" onClick={onCancel}>
                 Cancelar

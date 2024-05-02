@@ -75,42 +75,46 @@ const ProductsList = () => {
     <>
       <S.ButtonsContainer>
         <button className="add" onClick={handleToggleAddProductForm}>
-          Adicionar Produto
+          Adicionar produto
         </button>
         {isAddProductFormVisible && (
           <AddProductForm onClose={() => setIsAddProductFormVisible(false)} />
         )}
         {/* Renderiza o formulário de adição de produto se a flag de visibilidade estiver true */}
         <button className="remove" onClick={handleRemoveAllProducts}>
-          Remover Todos os Produtos
+          Remover todos
         </button>
       </S.ButtonsContainer>
       <h2>Lista de Produtos</h2>
-      <S.ProductListContainer>
-        {products.map((product) => (
-          <S.ProductContainer key={product.id}>
-            <p>Nome:</p>
-            <span>{product.name}</span>
-            <p>Descrição:</p>
-            <span className="description">{product.description}</span>
-            <p>Preço:</p>
-            <span>R$ {product.value}</span>
-            <div>
-              <RemoveProductButton productId={product.id} />
-              <UpdateProductButton
-                onClick={() => handleUpdateProduct(product.id)}
-              />
-            </div>
-            {selectedProductId === product.id && (
-              <UpdateProductForm
-                productId={product.id}
-                initialProduct={product}
-                onCancel={handleCancelUpdate}
-              />
-            )}
-          </S.ProductContainer>
-        ))}
-      </S.ProductListContainer>
+      {products.length === 0 ? (
+        <S.Erro>Nenhum produto cadastrado.</S.Erro>
+      ) : (
+        <S.ProductListContainer>
+          {products.map((product) => (
+            <S.ProductContainer key={product.id}>
+              <p>Nome:</p>
+              <span>{product.name}</span>
+              <p>Preço:</p>
+              <span>R$ {product.value}</span>
+              <p>Descrição:</p>
+              <span className="description">{product.description}</span>
+              <div>
+                <RemoveProductButton productId={product.id} />
+                <UpdateProductButton
+                  onClick={() => handleUpdateProduct(product.id)}
+                />
+              </div>
+              {selectedProductId === product.id && (
+                <UpdateProductForm
+                  productId={product.id}
+                  initialProduct={product}
+                  onCancel={handleCancelUpdate}
+                />
+              )}
+            </S.ProductContainer>
+          ))}
+        </S.ProductListContainer>
+      )}
     </>
   )
 }
