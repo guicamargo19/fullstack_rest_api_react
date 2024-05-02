@@ -20,5 +20,10 @@ export const ProductButtonContainer = styled.div`
       opacity: 80%;
       transition: all ease-in-out 0.2s;
     }
+
+    @media screen and (max-width: 767px) {
+      margin-top: 0;
+      margin-left: 10px;
+    }
   }
 `

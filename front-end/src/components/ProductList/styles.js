@@ -4,11 +4,6 @@ import { Colors } from '../../global'
 export const ProductListContainer = styled.div`
   display: block;
 
-  div {
-    list-style: none;
-    transition: all ease-in-out 0.2s;
-  }
-
   p {
     font-weight: bold;
     padding-right: 14px;
@@ -16,6 +11,20 @@ export const ProductListContainer = styled.div`
 
   span {
     text-align: justify;
+    display: flex;
+
+    @media screen and (max-width: 767px) {
+      word-break: break-all;
+      margin-bottom: 20px;
+    }
+  }
+`
+export const ProductListContent = styled.div`
+  list-style: none;
+  transition: all ease-in-out 0.2s;
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
   }
 `
 
@@ -29,6 +38,10 @@ export const ProductContainer = styled.div`
   &:hover {
     background-color: ${Colors.bgProductsHover};
     transition: all ease-in-out 0.2s;
+  }
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
   }
 `
 
@@ -44,6 +57,10 @@ export const DivNomePreco = styled.div`
   display: flex;
   align-items: start;
   width: 100%;
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+  }
 `
 
 export const DivNome = styled.div`
@@ -53,6 +70,10 @@ export const DivNome = styled.div`
 
 export const DivPreco = styled.div`
   display: flex;
+
+  @media screen and (max-width: 767px) {
+    margin-top: 10px;
+  }
 `
 
 export const DivDescription = styled.div`
@@ -60,9 +81,16 @@ export const DivDescription = styled.div`
   width: 96%;
 `
 
+export const DivUpdateRemoveButtons = styled.div`
+  @media screen and (max-width: 767px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+`
+
 export const ButtonsContainer = styled.div`
   display: flex;
-  width: 100%;
   justify-content: space-between;
   align-items: center;
   margin-top: 40px;
@@ -80,6 +108,7 @@ export const ButtonsContainer = styled.div`
     border-radius: 4px;
     margin-bottom: 30px;
     color: ${Colors.whiteColor};
+    width: 250px;
 
     &:hover {
       opacity: 80%;
@@ -89,5 +118,9 @@ export const ButtonsContainer = styled.div`
 
   .remove {
     background-color: ${Colors.cancelButtonColor};
+  }
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
   }
 `

@@ -40,18 +40,18 @@ export const EstiloGlobal = createGlobalStyle`
             margin-bottom: 20px;
             text-transform: uppercase;
             text-align: right;
-            font-size: 64px;
+            font-size: 50px;
             width: 566px;
             margin: 0 45%;
         }
 
         hr {
             height: 4px;
-            width: 64%;
-            margin-top: -43px;
+            width: 71%;
+            margin-top: -34px;
             margin-bottom: 150px;
             border: none;
-            background-color: #000;
+            background-color: ${Colors.blackColor}
         }
 
         h2 {
@@ -59,6 +59,45 @@ export const EstiloGlobal = createGlobalStyle`
             margin-top: 10px;
             margin-bottom: 10px;
             font-size: 30px;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .container {
+            max-width: 90%;
+
+            h1 {
+                font-size: 32px;
+                width: 336px;
+                margin: 0;
+                
+            }
+            
+            hr {
+                width: 45%;
+                margin-top: -23px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        .container {
+            max-width: 90%;
+
+            h1 {
+                font-size: 50px;
+                width: 440px;
+                margin: 0 35%;
+                
+            }
+            
+            hr {
+                width: 57%;
+            }
         }
     }
 }

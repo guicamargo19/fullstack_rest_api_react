@@ -92,7 +92,7 @@ const ProductsList = () => {
         <S.ProductListContainer>
           {products.map((product) => (
             <S.ProductContainer key={product.id}>
-              <div>
+              <S.ProductListContent>
                 <S.DivNomePreco>
                   <S.DivNome>
                     <p>Nome:</p>
@@ -106,13 +106,13 @@ const ProductsList = () => {
                 <S.DivDescription>
                   <span>{product.description}</span>
                 </S.DivDescription>
-              </div>
-              <div>
+              </S.ProductListContent>
+              <S.DivUpdateRemoveButtons>
                 <UpdateProductButton
                   onClick={() => handleUpdateProduct(product.id)}
                 />
                 <RemoveProductButton productId={product.id} />
-              </div>
+              </S.DivUpdateRemoveButtons>
               {selectedProductId === product.id && (
                 <UpdateProductForm
                   productId={product.id}

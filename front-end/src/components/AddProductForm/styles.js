@@ -23,6 +23,16 @@ export const ModalContainer = styled.div`
   position: relative;
   width: 850px;
   height: 340px;
+
+  @media screen and (max-width: 767px) {
+    max-width: 90%;
+    width: 320px;
+    height: 85%;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    max-width: 90%;
+  }
 `
 
 export const ModalTitle = styled.h2`
@@ -44,6 +54,10 @@ export const ModalContent = styled.div`
     border: none;
     outline-color: ${Colors.mainColor};
     font-size: 20px;
+
+    @media screen and (max-width: 767px) {
+      height: 120px;
+    }
   }
 
   input {
@@ -53,6 +67,10 @@ export const ModalContent = styled.div`
     background-color: ${Colors.bgInputs};
     border: none;
     outline-color: ${Colors.mainColor};
+
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
   }
 `
 
@@ -60,12 +78,20 @@ export const DivInputs = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 20px;
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+  }
 `
 
 export const DivNameValue = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  /* @media screen and (max-width: 767px) {
+    display: block;
+  } */
 `
 
 export const DivTextArea = styled.div`
@@ -80,6 +106,10 @@ export const ModalActions = styled.div`
   justify-content: center;
   margin-top: 20px;
   gap: 20px;
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+  }
 
   button {
     text-transform: uppercase;
