@@ -68,7 +68,7 @@ const ProductsList = () => {
     return (
         <>
             <S.ButtonsContainer>
-                <button onClick={handleToggleAddProductForm}>Adicionar Produto</button>
+                <button className="add" onClick={handleToggleAddProductForm}>Adicionar Produto</button>
                 {isAddProductFormVisible && (
                     <AddProductForm onClose={() => setIsAddProductFormVisible(false)} />
                 )}

@@ -54,7 +54,7 @@ function UpdateProductForm({ productId, initialProduct = {}, onCancel }) {
     <S.ModalOverlay>
       <S.ModalContainer>
       <S.CloseButton onClick={onCancel}>X</S.CloseButton>
-        <S.ModalTitle>Atualizar Produto</S.ModalTitle>
+        <S.ModalTitle>Atualizar produto</S.ModalTitle>
         <S.ModalContent>
           <form onSubmit={handleSubmit}>
             <div>

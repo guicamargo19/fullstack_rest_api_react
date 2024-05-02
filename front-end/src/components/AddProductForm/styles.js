@@ -19,7 +19,8 @@ export const ModalContainer = styled.div`
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   position: relative;
-  width: 400px;
+  width: 850px;
+  height: 340px;
 `;
 
 export const ModalTitle = styled.h2`
@@ -27,31 +28,57 @@ export const ModalTitle = styled.h2`
 `;
 
 export const ModalContent = styled.div`
-  div {
-    display: flex;
-    flex-direction: column;
-  }
-
   label {
     font-weight: bold;
+    text-transform: uppercase;
   }
 
   textarea {
     resize: none;
-    padding: 4px;
-    width: 100%
+    padding: 12px;
+    width: 100%;
+    height: 100%;
+    background-color: #e7e7e7;
+    border: none;
+    outline-color: #155956;
+    font-size: 20px;
   }
 
   input {
-    padding: 4px;
-    width: 100%
+    padding: 12px;
+    width: 320px;
+    font-size: 20px;
+    background-color: #e7e7e7;
+    border: none;
+    outline-color: #155956;
   }
 `;
 
-export const ModalActions = styled.div`
+export const DivInputs = styled.div`
   display: flex;
   justify-content: space-between;
+  gap: 20px;
+`
+
+export const DivNameValue = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`
+
+export const DivTextArea = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+`
+
+export const ModalActions = styled.div`
+  display: flex;
+  justify-content: center;
   margin-top: 20px;
+  gap: 20px;
+
 
   button {
     text-transform: uppercase;
@@ -59,7 +86,8 @@ export const ModalActions = styled.div`
     color: #fff;
     border: none;
     transition: all ease-in-out 0.2s;
-    
+    font-size: 20px !important;
+    cursor: pointer;
 
     &:hover {
       opacity: 80%;
@@ -67,12 +95,11 @@ export const ModalActions = styled.div`
     }
 
     &[type=submit] {
-      background-color: background-color: rgba(0,100,0, 0.8);
+      background-color: rgba(0,100,0, 0.8);
     }
 
     &[type=button] {
       background-color: rgba(178,34,34, 0.8);
-      margin-top: 10px;
     }
   }
 `;
@@ -81,8 +108,8 @@ export const CloseButton = styled.button`
   position: absolute;
   top: 10px;
   right: 10px;
-  background: none;
+  background-color: transparent !important;
   border: none;
-  font-size: 20px;
+  font-size: 26px;
   cursor: pointer;
 `;

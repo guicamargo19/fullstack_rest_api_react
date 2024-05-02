@@ -59,6 +59,7 @@ export const ModalActions = styled.div`
     color: #fff;
     border: none;
     transition: all ease-in-out 0.2s;
+    cursor: pointer;
     
     &:hover {
       opacity: 80%;
@@ -80,8 +81,8 @@ export const CloseButton = styled.button`
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: none !important;
+  background-color: transparent !important;
   border: none;
-  font-size: 20px;
+  font-size: 26px;
   cursor: pointer;
 `;

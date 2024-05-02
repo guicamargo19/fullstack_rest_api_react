@@ -56,7 +56,8 @@ export const ButtonsContainer = styled.div`
     align-items: center;
     margin-top: 40px;
 
-    button {
+    .remove,
+    .add {
         background-color: rgba(65,105,225, 0.8);
         font-size: 26px;
         text-transform: uppercase;

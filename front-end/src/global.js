@@ -38,7 +38,7 @@ export const EstiloGlobal = createGlobalStyle`
 
         h2 {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 10px;
             margin-bottom: 10px;
             font-size: 30px;
         }
