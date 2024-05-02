@@ -1,4 +1,6 @@
-import styled from 'styled-components';
+import { Colors } from '../../global'
+
+import styled from 'styled-components'
 
 export const ModalOverlay = styled.div`
   position: fixed;
@@ -6,26 +8,26 @@ export const ModalOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: ${Colors.overlayColor};
   z-index: 100;
   display: flex;
   justify-content: center;
   align-items: center;
-`;
+`
 
 export const ModalContainer = styled.div`
-  background-color: white;
+  background-color: ${Colors.whiteColor};
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   position: relative;
   width: 850px;
   height: 340px;
-`;
+`
 
 export const ModalTitle = styled.h2`
   margin-bottom: 20px;
-`;
+`
 
 export const ModalContent = styled.div`
   label {
@@ -38,9 +40,9 @@ export const ModalContent = styled.div`
     padding: 12px;
     width: 100%;
     height: 100%;
-    background-color: #e7e7e7;
+    background-color: ${Colors.bgInputs};
     border: none;
-    outline-color: #155956;
+    outline-color: ${Colors.mainColor};
     font-size: 20px;
   }
 
@@ -48,11 +50,11 @@ export const ModalContent = styled.div`
     padding: 12px;
     width: 320px;
     font-size: 20px;
-    background-color: #e7e7e7;
+    background-color: ${Colors.bgInputs};
     border: none;
-    outline-color: #155956;
+    outline-color: ${Colors.mainColor};
   }
-`;
+`
 
 export const DivInputs = styled.div`
   display: flex;
@@ -79,11 +81,10 @@ export const ModalActions = styled.div`
   margin-top: 20px;
   gap: 20px;
 
-
   button {
     text-transform: uppercase;
     padding: 6px;
-    color: #fff;
+    color: ${Colors.whiteColor};
     border: none;
     transition: all ease-in-out 0.2s;
     font-size: 20px !important;
@@ -94,15 +95,15 @@ export const ModalActions = styled.div`
       transition: all ease-in-out 0.2s;
     }
 
-    &[type=submit] {
-      background-color: rgba(0,100,0, 0.8);
+    &[type='submit'] {
+      background-color: ${Colors.submitButtonColor};
     }
 
-    &[type=button] {
-      background-color: rgba(178,34,34, 0.8);
+    &[type='button'] {
+      background-color: ${Colors.cancelButtonColor};
     }
   }
-`;
+`
 
 export const CloseButton = styled.button`
   position: absolute;
@@ -112,4 +113,4 @@ export const CloseButton = styled.button`
   border: none;
   font-size: 26px;
   cursor: pointer;
-`;
+`

@@ -1,10 +1,11 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
+import { Colors } from '../../global'
 
 export const ProductButtonContainer = styled.div`
   button {
     padding: 8px;
-    background-color: rgba(0,0,128,0.8);
-    color: #fff;
+    background-color: ${Colors.updateButtonColor};
+    color: ${Colors.whiteColor};
     border: none;
     cursor: pointer;
     transition: all ease-in-out 0.2s;
@@ -13,8 +14,8 @@ export const ProductButtonContainer = styled.div`
     width: 300px;
 
     &:hover {
-        opacity: 80%;
-        transition: all ease-in-out 0.2s;
+      opacity: 80%;
+      transition: all ease-in-out 0.2s;
     }
   }
 `
