@@ -40,16 +40,27 @@ Front-end foi inicializado com [Create React App](https://github.com/facebook/cr
 Siga estas etapas a seguir para configurar o ambiente de desenvolvimento:
 
 1. Clone este repositório em sua máquina local.
-2. Navegue até o diretório clonado e acesse a pasta back-end
 ```bash
 git clone https://github.com/guicamargo19/bnex_desafio-tecnico
-cd bnex_desafio-tecnico/back-end
 ```
-3. Execute o seguinte comando para instalar as dependências:
+2. Navegue até o diretório clonado
+```shell
+cd bnex_desafio-tecnico
+```
+3. Crie e ative o ambiente virtual (comandos podem variar entre Windows, Linux e Mac.)
+```shell
+python -m venv venv
+source venv/bin/activate
+```
+4. Acesse a pasta back-end
+```bash
+cd back-end
+```
+5. Execute o seguinte comando para instalar as dependências:
 ```shell
 pip install -r requirements.txt
 ```
-4. Acesse a pasta front-end e execute o seguinte comnaod para instalar as dependências
+6. Acesse a pasta front-end e execute o seguinte comando para instalar as dependências:
 ```shell
 cd front-end
 npm install
@@ -76,7 +87,8 @@ do exemplo preenchendo com dados iguais ao do arquivo settings.py.
 ## Testes
 
 Foram implementados testes para testar a integridade do Model, das Views e do
-Serializer neste projeto.
+Serializer neste projeto. E também utilizando DRF (APITestCase) para simplificar este testes, 
+testando se as operações CRUD estão funcionando como esperado.
 
 Rode os testes dentro do Docker:
 
@@ -96,7 +108,7 @@ docker-compose run --rm back-end-server python manage.py test
 * **Django** - Framework para desenvolvimento rápido para web, escrito em Python, que utiliza o padrão model-template-view.
 * **ESLint** - Linter, uma ferramenta de análise estática, para as linguagens Javascript e Typescript, sendo o mais popular do mundo para tais linguagens.
 * **ReactJS** - Biblioteca front-end JavaScript de código aberto com foco em criar interfaces de usuário em páginas web.
-* **Docker** - Conjunto de produtos de plataforma como serviço que usam virtualização de nível de sistema operacional para entregar software em pacotes chamados contêineres.
+* **Docker** - Conjunto de produtos de PaaS que usam virtualização de nível de sistema operacional para entregar software em pacotes chamados contêineres.
 * **Styled Components** - Uma biblioteca que nos permite escrever CSS em JavaScript enquanto construímos componentes customizados em ReactJS.
 
 </div>
