@@ -124,3 +124,74 @@ export const ButtonsContainer = styled.div`
     flex-direction: column;
   }
 `
+
+export const ModalOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: ${Colors.overlayColor};
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+export const ModalContainer = styled.div`
+  background-color: ${Colors.whiteColor};
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  width: 338px;
+  height: 176px;
+  text-align: center;
+
+  @media screen and (max-width: 767px) {
+    max-width: 90%;
+    width: 290px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    max-width: 90%;
+  }
+`
+
+export const ModalContent = styled.div`
+  p {
+    font-size: 20px;
+  }
+
+    @media screen and (max-width: 767px) {}
+  }
+`
+
+export const ModalActions = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 20px;
+
+  button {
+    text-transform: uppercase;
+    padding: 8px;
+    color: ${Colors.whiteColor};
+    border: none;
+    transition: all ease-in-out 0.2s;
+    font-size: 20px !important;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 84px;
+    background-color: ${Colors.submitButtonColor};
+
+    &:hover {
+      opacity: 80%;
+      transition: all ease-in-out 0.2s;
+    }
+
+    &.sim {
+      background-color: ${Colors.cancelButtonColor};
+    }
+  }
+`

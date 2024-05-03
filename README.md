@@ -228,7 +228,8 @@ listagem e botões de remoção e atualização.
 O estado dos componentes é gerenciado com o useState, que permite criar e atualizar o estado de um componente funcional.
 
 A integração com Back-End é dada através de requisições a API sendo gerenciadas com React Query de forma assíncrona,
-melhorando e simplificando a aplicação React.
+melhorando e simplificando a aplicação React e com useMutation que ajuda a lidar com as mutações do lado do servidor
+como as requisições HTTP.
 
 </div>
 <div id="banco-de-dados">

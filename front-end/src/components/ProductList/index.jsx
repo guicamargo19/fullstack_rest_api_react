@@ -26,6 +26,9 @@ const removeAllProducts = async () => {
 const ProductsList = () => {
   const queryClient = useQueryClient()
   const [selectedProductId, setSelectedProductId] = useState(null)
+  const [showConfirmation, setShowConfirmation] = useState(false)
+  // Adicione o estado para controlar a exibição do modal de confirmação
+
   const {
     data: products,
     isLoading,
@@ -46,7 +49,12 @@ const ProductsList = () => {
   }
 
   const handleRemoveAllProducts = () => {
+    setShowConfirmation(true) // Abra o modal de confirmação
+  }
+
+  const confirmRemoveAllProducts = () => {
     removeProductsMutation.mutate()
+    setShowConfirmation(false) // Feche o modal de confirmação após a remoção
   }
 
   // Função para mostrar ou ocultar o formulário de adição de produto
@@ -80,7 +88,6 @@ const ProductsList = () => {
         {isAddProductFormVisible && (
           <AddProductForm onClose={() => setIsAddProductFormVisible(false)} />
         )}
-        {/* Renderiza o formulário de adição de produto se a flag de visibilidade estiver true */}
         <button className="remove" onClick={handleRemoveAllProducts}>
           Remover todos
         </button>
@@ -123,6 +130,22 @@ const ProductsList = () => {
             </S.ProductContainer>
           ))}
         </S.ProductListContainer>
+      )}
+      {/* Renderize o modal de confirmação se showConfirmation for true */}
+      {showConfirmation && (
+        <S.ModalOverlay>
+          <S.ModalContainer>
+            <S.ModalContent>
+              <p>Deseja realmente remover todos os produtos?</p>
+              <S.ModalActions>
+                <button className="sim" onClick={confirmRemoveAllProducts}>
+                  Sim
+                </button>
+                <button onClick={() => setShowConfirmation(false)}>Não</button>
+              </S.ModalActions>
+            </S.ModalContent>
+          </S.ModalContainer>
+        </S.ModalOverlay>
       )}
     </>
   )
