@@ -233,9 +233,6 @@ A integração com Back-End é dada através de requisições a API sendo gerenc
 melhorando e simplificando a aplicação React e com useMutation que ajuda a lidar com as mutações do lado do servidor
 como as requisições HTTP.
 
-Durante o desenvolvimento, foi encontrado um pacote depreciado na pasta node_modules, criei um script com patch-package para
-atualizar este pacote sem ter que alterá-lo diretamente.
-
 Durante execução na porta 3000: [http://localhost:3000](http://localhost:3000)
 
 </div>
