@@ -1,5 +1,7 @@
 # Desafio Técnico BNEX
 
+<img src="https://servidor-estatico-tan.vercel.app/produtos.png"/>
+
 Projeto permite a criação de um elemento Produto, mantendo todos os dados dele, permitindo
 o CRUD (Create, Read, Update, Delete).
 
