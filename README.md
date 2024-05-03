@@ -148,11 +148,10 @@ O Back-End é executado pela porta 8000: [http://localhost:8000/api/products](ht
 ## API
 
 ## API Endpoint: Listar produtos
-```
-GET /api/produtos
+  **GET /api/produtos**
 
 Retorna uma lista de todos os produtos.
-```
+
 #### Resposta
 ```
 HTTP 200 OK
@@ -175,11 +174,11 @@ Content-Type: application/json
 ```
 -------------------------------------
 ## API Endpoint: Criar produto
-```
-POST /api/produtos/
+
+**POST /api/produtos/**
 
 Cria um produto
-```
+
 #### Resposta
 ```
 HTTP 201 OK
@@ -187,11 +186,11 @@ Content-Type: application/json
 ```
 -------------------------------------
 ## API Endpoint: Atualiza produto
-```
-PATCH /api/produtos/${productID}
+
+**PATCH /api/produtos/${productID}**
 
 Atualiza o produto solicitado
-```
+
 #### Resposta
 ```
 HTTP 200 OK
@@ -199,11 +198,11 @@ Content-Type: application/json
 ```
 -------------------------------------
 ## API Endpoint: Deletar produto
-```
-DELETE /api/produtos/${productID}
+
+**DELETE /api/produtos/${productID}**
 
 Apaga o produto solicitado
-```
+
 #### Resposta
 ```
 HTTP 204 OK
@@ -211,11 +210,11 @@ Content-Type: application/json
 ```
 -------------------------------------
 ## API Endpoint: Deletar todos os produtos
-```
-DETELE /api/produtos/
+
+**DETELE /api/produtos/**
 
 Apaga todos os produtos
-```
+
 #### Resposta
 ```
 HTTP 204 OK
