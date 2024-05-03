@@ -2,10 +2,13 @@
 
 <img src="https://servidor-estatico-tan.vercel.app/produtos.png"/>
 
-Projeto permite a criação de um elemento Produto, mantendo todos os dados dele, permitindo
-o CRUD (Create, Read, Update, Delete).
+O projeto viabiliza a criação de um elemento Produto, com a integral preservação de todos os seus dados. Através de uma
+interface Front-end simples, minimalista e intuitiva, construída com **ReactJS**, são executáveis operações CRUD (Create, Read, Update, Delete).
 
-Projeto desenvolvido para desafio técnico em processo seletivo.
+O Back-end, elaborado em **Django** com **Python**, incorpora a REST API mediante o **Django Rest Framework**, e o armazenamento de dados
+é efetuado utilizando o **PostgreSQL**.
+
+- Projeto desenvolvido para desafio técnico em processo seletivo.
 
 ## Sumário
 
@@ -56,7 +59,7 @@ Os dados devem ser os mesmos presentes no arquivo docker-compose.yml.
 ```shell
 cd back-end/dotenv_files
 ```
-2. Acesse a pasta back-end na raiz e execute o comando a seguir:
+2. Acesse a pasta back-end na raiz e execute o comando a seguir e certifique-se de que o Docker Desktop está aberto.
 ```shell
 cd back-end
 docker-compose up --build
@@ -125,6 +128,7 @@ docker-compose run --rm back-end-server python manage.py test
 * **CSS** - Cascading Style Sheets é um mecanismo para adicionar estilos a uma página web.
 * **ESLint** - Linter, uma ferramenta de análise estática, para as linguagens Javascript e Typescript, sendo o mais popular do mundo para tais linguagens.
 * **Prettier** - Ferramenta para formatação de código, necessitando de configurações para que funcione no VSCode.
+* **PostgreSQL** - Um sistema gerenciador de banco de dados objeto relacional, desenvolvido como projeto de código aberto.
 * **Docker** - Conjunto de produtos de PaaS que usam virtualização de nível de sistema operacional para entregar software em pacotes chamados contêineres.
 * **NPM** - Gerenciador de pacotes padrão para o ambiente de tempo de execução JavaScript Node.JS.
 
@@ -137,16 +141,16 @@ docker-compose run --rm back-end-server python manage.py test
 ## 1. Back-End (Django com Python)
 
 Back-end desenvolvido em **Django** com **Python** e construção da Rest API com **DRF (Django Rest Framework)**, 
-que mantém os dados da Entidade “Produto”. Ele provém toda a manutenção (CRUD) dessa entidade. Esta entidade possui os atributos de nome, descrição e valor. 
+que mantém os dados da Entidade “Produto”. Ele provém toda a manutenção (CRUD) dessa entidade. 
+
+O modelo da entidade produto possui três campos (nome, descrição e valor), sendo o nome um campo
+do tipo CharField, o campo descrição do tipo TextField e o valor sendo um campo tipo DecimalField.
 
 Projeto está na pasta "back-end", onde dentro dela encontra-se o app Products, assim como a pasta backend onde
 se localizam os arquivos como settings.py e wsgi.py. No App Products é onde estão localizados o Model, as Views
 utilizando CBV (Class Based Views), os Serializers e os Testes.
 
-O modelo da entidade produto possui três campos (nome, descrição e valor), sendo o nome um campo
-do tipo CharField, o campo descrição do tipo TextField e o valor sendo um campo tipo DecimalField.
-
-O Back-End é executado pela porta 8000: [http://localhost:8000/api/products](http://localhost:8000/api/products)
+O Back-End é hospedado na porta 8000: [http://localhost:8000/api/products](http://localhost:8000/api/products)
 
 ## API
 
@@ -228,53 +232,51 @@ Content-Type: application/json
 
 ## 2. Front-End (ReactJS com JavaScript)
 
-Assim como o Back-end, o projeto Front-end está localizado na pasta front-end na raiz. Desenvolvido em 
-**ReactJS** com **JavaScript**, com estilizição usando **Styled Componentes (CSS-in-JS)**, possui estrutura simples,
-com componentes que interagem entre si, como formulário de criação e atualização do produto, componente de
-listagem e botões de remoção e atualização.
+O projeto Front-end, assim como o Back-end, está localizado na pasta "front-end" na raiz do diretório. Desenvolvido com **ReactJS**
+utilizando **JavaScript**, o Front-end adota a estilização através de Styled Components (CSS-in-JS). Sua estrutura é caracterizada 
+pela simplicidade, composta por componentes que interagem entre si de forma coesa. Destacam-se elementos como o formulário de criação
+e atualização de produtos, o componente de listagem e os botões de remoção e atualização.
 
-O estado dos componentes é gerenciado com o useState, que permite criar e atualizar o estado de um componente funcional.
+O gerenciamento do estado dos componentes é realizado utilizando o **useState**, proporcionando a capacidade de criar e atualizar
+o estado de um componente funcional de maneira eficiente.
 
-A integração com Back-End é dada através de requisições a API sendo gerenciadas com React Query de forma assíncrona,
-melhorando e simplificando a aplicação React e com useMutation que ajuda a lidar com as mutações do lado do servidor,
-como as requisições HTTP.
+A integração com o Back-End é viabilizada por meio de requisições à API, gerenciadas de forma assíncrona através do **React Query**.
+Essa abordagem contribui para a melhoria e simplificação da aplicação React, enquanto o **useMutation** auxilia no tratamento das mutações
+do lado do servidor, como as requisições HTTP.
 
-O Front-End é executado pela porta 3000: [http://localhost:3000](http://localhost:3000)
+O Front-End é hospedado na porta 3000: [http://localhost:3000](http://localhost:3000)
 
 </div>
 <div id="banco-de-dados">
 
 ## 3. Banco de Dados (PostgreSQL)
 
-O banco de dados com **PostgreSQL** é simples, com apenas uma tabela: a tabela de Produtos.
+O banco de dados **PostgreSQL** é estruturado de forma simples, composto apenas por uma tabela, a qual abriga os dados dos produtos.
 
-Após a definição dos modelos em Django, as migrações precisam ser criadas para aplicar as alterações
-no banco de dados, utilizando o comando "python manage.py makemigrations".
+Após a definição dos modelos no Django, é imperativo criar as migrações correspondentes para aplicar as alterações no banco de dados.
+Isso é realizado através do comando **"python manage.py makemigrations"**.
 
-Após a criação das migrações é preciso aplicá-las, utilizando comando "python manage.py migrate".
-Este comando executa todas as migrações pendentes e atualiza o esquema do banco de dados de acordo
-com as definições do modelo.
+Uma vez que as migrações tenham sido criadas, é necessário aplicá-las utilizando o comando **"python manage.py migrate"**.
+Esta operação executa todas as migrações pendentes e atualiza o esquema do banco de dados de acordo com as definições do modelo.
 
-O DB-Server é executado na porta 5432 padrão do PostgreSQL.
+O DB-Server é hospedado na porta padrão 5432 do PostgreSQL.
 
 </div>
 <div id="docker">
 
 ## 4. Docker e Docker Compose
 
-O arquivo "docker-compose.yml" define três serviços: 'db-server', 'back-end-server' e 'front-end-server',
+O arquivo "docker-compose.yml" é responsável por definir três serviços distintos: 'db-server', 'back-end-server' e 'front-end-server',
 cada um com suas próprias configurações e dependências.
 
-- Utiliza-se como imagem 'postgres:latest', que é uma imagem do Docker Hub para o PostgreSQL.
-- O ambiente possui os dados como o nome do banco de dados, usuário e senha, que foram previamente configurados no
-arquivo ".env".
-- Em "volumes" é mapeado um diretório de dados do PostgreSQL, permitindo que os dados persistam entre
-reinicializações do contêiner.
-- Em "network" são definidas duas redes: back-end-server-network e front-end-server-network, que são usadas para
-separar a comunicação entre os serviços, facilitando a comunicação entre contêineres.
+- Utiliza-se a imagem 'postgres:latest' disponível no Docker Hub, que é uma imagem pré-configurada do PostgreSQL.
+- O ambiente é configurado com os dados necessários, como o nome do banco de dados, usuário e senha, os quais foram previamente especificados no arquivo ".env".
+- A seção "volumes" mapeia um diretório de dados do PostgreSQL, garantindo a persistência dos dados entre reinicializações do contêiner.
+- Na seção "network", são definidas duas redes: 'back-end-server-network' e 'front-end-server-network'. Estas redes são utilizadas para separar a
+comunicação entre os serviços, simplificando a interação entre os contêineres.
 
-No caso do back-end-server, foi definido o seguinte comando utilizado para esperar o banco de dados subir e
-depois realizar as migrações e rodar o servidor:
+No que concerne ao 'back-end-server', foi especificado o 
+seguinte comando para aguardar a inicialização do banco de dados antes de realizar as migrações e iniciar o servidor:
 ````
 sh -c "until pg_isready -h db-server -U backend_user; do
               echo waiting for database;

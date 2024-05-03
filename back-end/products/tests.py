@@ -1,3 +1,4 @@
+# type: ignore
 from django.test import TestCase
 from rest_framework.test import APIClient, APITestCase
 from .models import Product
@@ -25,7 +26,7 @@ class ProductModelTestCase(TestCase):
         self.assertEqual(product.value, float(
             self.valid_product_data['value']))
 
-    # Campos inválidos
+    # Dado inválido para o campo value
     def test_invalid_product_creation_invalid_value(self):
         invalid_product_data = {
             'name': 'Produto teste',
@@ -35,7 +36,7 @@ class ProductModelTestCase(TestCase):
         with self.assertRaises(ValidationError):
             Product.objects.create(**invalid_product_data)
 
-    # Campos faltando
+    # Campo name faltando preencher
     def test_invalid_product_creation_missing_fields(self):
         invalid_product_data = {
             # 'name': 'Produto teste', # Campo faltando
@@ -44,6 +45,7 @@ class ProductModelTestCase(TestCase):
         }
 
         invalid_product = Product(**invalid_product_data)
+
         with self.assertRaises(ValidationError):
             invalid_product.full_clean()
 
@@ -61,7 +63,7 @@ class ProductModelTestCase(TestCase):
             invalid_product.full_clean()
 
 
-# Teste Views (Leitura dos produtos e Deletar um produto por ID)
+# Teste Views
 class ProductViewTestCase(TestCase):
     def setUp(self):
         self.client = APIClient()
@@ -71,18 +73,20 @@ class ProductViewTestCase(TestCase):
             value=10.99
         )
 
+    # Leitura dos produtos
     def test_product_list_create_view(self):
         response = self.client.get('/api/products/')
         self.assertEqual(response.status_code, 200)
 
+    # Deletar um produto por ID
     def test_product_retrieve_update_destroy_view(self):
         response = self.client.get(
-            f'/api/products/{self.product.id}'  # type: ignore
+            f'/api/products/{self.product.id}'
         )
         self.assertEqual(response.status_code, 200)
 
 
-# Teste de validação do Serializer
+# Teste Serializer
 class ProductSerializerTestCase(TestCase):
     def setUp(self):
         self.product_data = {
@@ -91,6 +95,7 @@ class ProductSerializerTestCase(TestCase):
             'value': '10.99'
         }
 
+    # Teste de validação do Serializer
     def test_product_serializer(self):
         serializer = ProductSerializer(data=self.product_data)
         self.assertTrue(serializer.is_valid())
@@ -109,6 +114,7 @@ class ProductSerializerTestCase(TestCase):
         # Convertendo para float para lidar com possíveis diferenças de tipo
 
 
+# Testes das operações CRUD na API
 class ProductAPITestCase(APITestCase):
     def setUp(self):
         self.product_data = {
