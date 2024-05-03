@@ -2,7 +2,7 @@ services:
   db-server:
     image: postgres:latest
     environment:
-      # POSTGRES_LOGGING: 'debug5'
+      POSTGRES_LOGGING: 'debug5'
       POSTGRES_DB: backend_db
       POSTGRES_USER: backend_user
       POSTGRES_PASSWORD: backend_password
