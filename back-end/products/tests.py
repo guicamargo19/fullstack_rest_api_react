@@ -4,6 +4,7 @@ from .models import Product
 from .serializers import ProductSerializer
 
 
+# Teste Model (Criação de um produto)
 class ProductModelTestCase(TestCase):
     def setUp(self):
         self.product = Product.objects.create(
@@ -18,6 +19,7 @@ class ProductModelTestCase(TestCase):
         self.assertEqual(self.product.value, 10.99)
 
 
+# Teste Views (Leitura da ProductList e Deletar um produto por ID)
 class ProductViewTestCase(TestCase):
     def setUp(self):
         self.client = APIClient()
@@ -32,7 +34,9 @@ class ProductViewTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_product_retrieve_update_destroy_view(self):
-        response = self.client.get(f'/api/products/{self.product.id}')
+        response = self.client.get(
+            f'/api/products/{self.product.id}'  # type: ignore
+        )
         self.assertEqual(response.status_code, 200)
 
 
