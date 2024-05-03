@@ -10,7 +10,8 @@ Projeto desenvolvido para desafio técnico em processo seletivo.
 ## Sumário
 
 - [Instalação](#instalacao)
-- [Configuração](#configuracao)
+- [Rodando o projeto](#rodando-o-projeto)
+- [Contribuindo](#configuracao-desenvolvimento)
 - [Ferramentas utilizadas](#ferramentas)
 - [Sobre](#sobre)
     - [Back-end](#backend)
@@ -41,50 +42,59 @@ Projeto Front-end foi inicializado com [Create React App](https://github.com/fac
 
 Siga estas etapas a seguir para configurar o ambiente de desenvolvimento:
 
-1. Clone este repositório em sua máquina local.
+- Clone este repositório em sua máquina local.
 ```bash
 git clone https://github.com/guicamargo19/bnex-desafio-tecnico
 ```
-2. Navegue até o diretório clonado
-```shell
-cd bnex-desafio-tecnico
-```
-3. Crie e ative o ambiente virtual (comandos podem variar entre Windows, Linux e Mac.)
-```shell
-python -m venv venv
-source venv/bin/activate
-```
-4. Acesse a pasta back-end
-```bash
-cd back-end
-```
-5. Execute o seguinte comando para instalar as dependências:
-```shell
-pip install -r requirements.txt
-```
-6. Acesse a pasta front-end e execute o seguinte comando para instalar as dependências:
-```shell
-cd front-end
-npm install
-```
 </div>
-<div id="configuracao">
+<div id="rodando-o-projeto">
 
-## Docker e Docker-compose
+## Rodando o projeto
 
-Para executar o projeto no Docker acesse a pasta back-end e execute o seguinte comando:
-
+1. Acesse a pasta back-end/dotenv_files e crie o arquivo ".env" a partir do ".env-example",
+os dados devem ser os mesmos presentes no arquivo docker-compose.yml.
+```shell
+cd back-end/dotenv_files
+```
+2. Acesse a pasta back-end na raiz e execute o comando a seguir:
 ```shell
 cd back-end
 docker-compose up --build
 ```
+</div>
+<div id="configuracao-desenvolvimento">
+
+## Contribuindo
+
+1. Navegue até o diretório clonado
+```shell
+cd bnex-desafio-tecnico
+```
+2. Crie e ative o ambiente virtual (comandos podem variar entre Windows, Linux e Mac.)
+```shell
+python -m venv venv
+source venv/bin/activate
+```
+3. Acesse a pasta back-end
+```bash
+cd back-end
+```
+4. Execute o seguinte comando para instalar as dependências:
+```shell
+pip install -r requirements.txt
+```
+5. Acesse a pasta front-end e execute o seguinte comando para instalar as dependências:
+```shell
+cd front-end
+npm install
+```
 
 ## Dotenv file (.env)
 
-No diretório back-end/dotenv_files é possível encontrar o arquivo ".env_example"
-que deve ser preenchido com variáveis de ambiente para configurações necessárias
-para banco de dados PostgreSQL. Certifique-se de criar este arquivo no mesmo local
-do exemplo preenchendo com dados iguais ao do arquivo settings.py.
+No diretório back-end/dotenv_files é possível encontrar o arquivo ".env_example", sendo que,
+a partir dele deve-se criar o arquivo ".env" que deve ser preenchido com variáveis de ambiente
+para configurações necessárias para o banco de dados PostgreSQL. Certifique-se de criar este
+arquivo no mesmo local do exemplo preenchendo com dados iguais ao do arquivo docker-compose.yml.
 
 ## Testes
 
