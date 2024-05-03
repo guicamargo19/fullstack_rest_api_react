@@ -113,13 +113,14 @@ export const ModalActions = styled.div`
 
   button {
     text-transform: uppercase;
-    padding: 6px;
+    padding: 8px;
     color: ${Colors.whiteColor};
     border: none;
     transition: all ease-in-out 0.2s;
     font-size: 20px !important;
     cursor: pointer;
     border-radius: 4px;
+    width: 230px;
 
     &:hover {
       opacity: 80%;
@@ -144,4 +145,10 @@ export const CloseButton = styled.button`
   border: none;
   font-size: 26px;
   cursor: pointer;
+  transition: all ease-in-out 0.2s;
+
+  &:hover {
+    transition: all ease-in-out 0.2s;
+    transform: scale(1.1);
+  }
 `
