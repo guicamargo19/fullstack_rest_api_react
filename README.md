@@ -3,7 +3,7 @@
 Projeto permite a criação de um elemento Produto, mantendo todos os dados dele, permitindo
 o CRUD (Create, Read, Update, Delete).
 
-Projeto desenvolvido como desafio técnico em processo seletivo.
+Projeto desenvolvido para desafio técnico em processo seletivo.
 
 ## Sumário
 
@@ -33,7 +33,7 @@ Antes de iniciar, você precisará ter instalado em sua máquina as seguintes fe
 - **Node.js**
 - **npm (geralmente vem com o Node.js)**
 
-Front-end foi inicializado com [Create React App](https://github.com/facebook/create-react-app).
+Projeto Front-end foi inicializado com [Create React App](https://github.com/facebook/create-react-app).
 
 ### Clonando o Repositório
 
@@ -41,11 +41,11 @@ Siga estas etapas a seguir para configurar o ambiente de desenvolvimento:
 
 1. Clone este repositório em sua máquina local.
 ```bash
-git clone https://github.com/guicamargo19/bnex_desafio-tecnico
+git clone https://github.com/guicamargo19/bnex-desafio-tecnico
 ```
 2. Navegue até o diretório clonado
 ```shell
-cd bnex_desafio-tecnico
+cd bnex-desafio-tecnico
 ```
 3. Crie e ative o ambiente virtual (comandos podem variar entre Windows, Linux e Mac.)
 ```shell
