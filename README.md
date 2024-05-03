@@ -70,11 +70,14 @@ docker-compose up --build
 ```shell
 cd bnex-desafio-tecnico
 ```
-2. Crie e ative o ambiente virtual (comandos podem variar entre Windows, Linux e Mac.)
+2. Crie e ative o ambiente virtual,(comandos podem variar entre Windows, Linux e Mac.)
 ```shell
 python -m venv venv
 source venv/bin/activate
 ```
+Após a ativação do ambiente virtual, selecione o interpretador correto para ele, digitando na barra superior 
+de pesquisa do VSCode: **>Python Select Interpreter**
+
 3. Acesse a pasta back-end
 ```bash
 cd back-end
