@@ -49,7 +49,7 @@ git clone https://github.com/guicamargo19/bnex-desafio-tecnico
 </div>
 <div id="rodando-o-projeto">
 
-## Rodando o projeto
+## Rodando o projeto no Docker
 
 1. Acesse a pasta back-end/dotenv_files e crie o arquivo ".env" a partir do ".env-example",
 os dados devem ser os mesmos presentes no arquivo docker-compose.yml.
@@ -93,7 +93,7 @@ npm install
 
 No diretório back-end/dotenv_files é possível encontrar o arquivo ".env_example", sendo que,
 a partir dele deve-se criar o arquivo ".env" que deve ser preenchido com variáveis de ambiente
-para configurações necessárias para o banco de dados PostgreSQL. Certifique-se de criar este
+com configurações necessárias para o banco de dados PostgreSQL. Certifique-se de criar este
 arquivo no mesmo local do exemplo preenchendo com dados iguais ao do arquivo docker-compose.yml.
 
 ## Testes
@@ -112,16 +112,18 @@ docker-compose run --rm back-end-server python manage.py test
 
 ## 🛠️ Ferramentas utilizadas para construção do projeto
 
-* **HTML** - Linguagem de marcação utilizada na construção de páginas na Web.
-* **CSS** - Cascading Style Sheets é um mecanismo para adicionar estilos a uma página web.
-* **NPM** - Gerenciador de pacotes padrão para o ambiente de tempo de execução JavaScript Node.JS.
-* **JavaScript** - Linguagem de programação interpretada estruturada, de alto nível com tipagem dinâmica fraca e multiparadigma.
 * **Python** - Linguagem de programação de alto nível, interpretada de script, imperativa, orientada a objetos, funcional, de tipagem dinâmica e forte.
 * **Django** - Framework para desenvolvimento rápido para web, escrito em Python, que utiliza o padrão model-template-view.
-* **ESLint** - Linter, uma ferramenta de análise estática, para as linguagens Javascript e Typescript, sendo o mais popular do mundo para tais linguagens.
+* **Django Rest Framework** - Biblioteca que permite a construção de APIs REST utilizando a estrutura do Django.
 * **ReactJS** - Biblioteca front-end JavaScript de código aberto com foco em criar interfaces de usuário em páginas web.
-* **Docker** - Conjunto de produtos de PaaS que usam virtualização de nível de sistema operacional para entregar software em pacotes chamados contêineres.
 * **Styled Components** - Uma biblioteca que nos permite escrever CSS em JavaScript enquanto construímos componentes customizados em ReactJS.
+* **JavaScript** - Linguagem de programação interpretada estruturada, de alto nível com tipagem dinâmica fraca e multiparadigma.
+* **HTML** - Linguagem de marcação utilizada na construção de páginas na Web.
+* **CSS** - Cascading Style Sheets é um mecanismo para adicionar estilos a uma página web.
+* **ESLint** - Linter, uma ferramenta de análise estática, para as linguagens Javascript e Typescript, sendo o mais popular do mundo para tais linguagens.
+* **Prettier** - Ferramenta para formatação de código, necessitando de configurações para que funcione no VSCode.
+* **Docker** - Conjunto de produtos de PaaS que usam virtualização de nível de sistema operacional para entregar software em pacotes chamados contêineres.
+* **NPM** - Gerenciador de pacotes padrão para o ambiente de tempo de execução JavaScript Node.JS.
 
 </div>
 <div id="sobre">
@@ -131,13 +133,13 @@ docker-compose run --rm back-end-server python manage.py test
 
 ## 1. Back-End (Django com Python)
 
-Back-end desenvolvido em **Django** com **Python** e **DRF (Django Rest Framework)**, mantém os dados de uma 
-Entidade “Produto”. Essa entidade possui os atributos de nome, descrição e valor. Ele provem toda a manutenção
-(CRUD) dessa entidade.
+Back-end desenvolvido em **Django** com **Python** e e contrução da Rest API com **DRF (Django Rest Framework)**, 
+mantém os dados da Entidade “Produto”. Essa entidade possui os atributos de nome, descrição e valor. Ele provem 
+toda a manutenção (CRUD) dessa entidade.
 
 Projeto está na pasta "back-end", onde dentro dela encontra-se o app Products, assim como a pasta backend onde
 se localizam os arquivos como settings.py e wsgi.py. No App Products é onde estão localizados o Model, as Views
-utilizando CBV (Class Based Views) e os Serializers construídos para API.
+utilizando CBV (Class Based Views), os Serializers e os Testes.
 
 Modelo da entidade produto, possui os 3 campos (nome, descrição e valor) onde são criados sendo o nome um campo
 do tipo CharFied, o campo descrição do tipo TextField e o valor sendo um campo tipo DecimalField.
@@ -219,14 +221,14 @@ Content-Type: application/json
 ## 2. Front-End (ReactJS com JavaScript)
 
 Assim como o Back-end, projeto Front-end está localizado na pasta front-end na raiz. Desenvolvido em 
-**ReactJS** com **JavaScript**, Possui estrutura simples, com componentes que interagem entre si como
-formulário de criação e atualização do produto, componente de listagem e botões de remoção e atualização.
+**ReactJS** com **JavaScript**, com estilizição usando **Styled Componentes (CSS-in-JS)** possui estrutura simples,
+com componentes que interagem entre si como formulário de criação e atualização do produto, componente de
+listagem e botões de remoção e atualização.
 
-O estado dos componentes é gerenciado com o useState, que permite criar e atualizar o estado de um
-componente funcional.
+O estado dos componentes é gerenciado com o useState, que permite criar e atualizar o estado de um componente funcional.
 
-A integração com Back-End é dada através de chamadas a API sendo gerenciadas com React Query de forma
-assíncrona, melhorando e simplificando a aplicação React.
+A integração com Back-End é dada através de requisições a API sendo gerenciadas com React Query de forma assíncrona,
+melhorando e simplificando a aplicação React.
 
 </div>
 <div id="banco-de-dados">
@@ -236,7 +238,7 @@ assíncrona, melhorando e simplificando a aplicação React.
 O banco de dados com **PostgreSQL** é simples com apenas uma tabela, a tabela de Produtos.
 
 Após a definição dos modelos em Django, as migrações precisam ser criadas para aplicar as alterações
-ao banco de dados, utilizando o comando "python manage.py makemigrations".
+no banco de dados, utilizando o comando "python manage.py makemigrations".
 
 Após a criação da migrações é preciso aplicá-las, utilizando comando "python manage.py migrate".
 Este comando executa todas as migrações pendentes e atualiza o esquema do banco de dados de acordo
