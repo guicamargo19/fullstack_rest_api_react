@@ -26,7 +26,11 @@ const RemoveProductButton = ({ productId }) => {
 
   return (
     <S.ProductButtonContainer>
-      <button onClick={() => mutate()} disabled={isLoading}>
+      <button
+        onClick={() => mutate()}
+        disabled={isLoading}
+        alt="Remover produto"
+      >
         <i className="bi bi-trash"></i>
       </button>
     </S.ProductButtonContainer>

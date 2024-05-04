@@ -34,6 +34,8 @@ export const ProductContainer = styled.div`
   background-color: ${Colors.bgProducts};
   padding: 14px;
   margin-bottom: 10px;
+  border-radius: 4px;
+  transition: all ease-in-out 0.2s;
 
   &:hover {
     background-color: ${Colors.bgProductsHover};
@@ -45,12 +47,9 @@ export const ProductContainer = styled.div`
   }
 `
 
-export const Carregando = styled.div`
-  margin-top: 40px;
-`
-
 export const Erro = styled.div`
-  margin-top: 40px;
+  margin-top: 30px;
+  text-align: center;
 `
 
 export const DivNomePreco = styled.div`
@@ -91,9 +90,10 @@ export const DivUpdateRemoveButtons = styled.div`
 
 export const ButtonsContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-top: 40px;
+  gap: 40px;
 
   .remove,
   .add {
@@ -145,7 +145,7 @@ export const ModalContainer = styled.div`
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   position: relative;
   width: 338px;
-  height: 176px;
+  height: 190px;
   text-align: center;
 
   @media screen and (max-width: 767px) {
@@ -161,6 +161,7 @@ export const ModalContainer = styled.div`
 export const ModalContent = styled.div`
   p {
     font-size: 20px;
+    margin-bottom: 20px;
   }
 
     @media screen and (max-width: 767px) {}
@@ -170,7 +171,7 @@ export const ModalContent = styled.div`
 export const ModalActions = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  padding-top: 40px;
   gap: 20px;
 
   button {

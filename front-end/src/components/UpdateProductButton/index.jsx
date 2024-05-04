@@ -5,7 +5,7 @@ import * as S from './styles'
 const UpdateProductButton = ({ onClick }) => {
   return (
     <S.ProductButtonContainer>
-      <button onClick={onClick}>
+      <button onClick={onClick} alt="Atualizar produto">
         <i className="bi bi-pencil"></i>
       </button>
     </S.ProductButtonContainer>

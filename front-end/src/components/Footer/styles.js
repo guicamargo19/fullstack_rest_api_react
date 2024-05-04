@@ -3,7 +3,7 @@ import { Colors } from '../../global'
 
 export const Footer = styled.footer`
   text-align: center;
-  padding: 100px 0 20px 0;
+  padding: 120px 0 20px 0;
 
   a {
     color: ${Colors.blackColor};
@@ -12,7 +12,7 @@ export const Footer = styled.footer`
 
     &:hover {
       transition: all ease-in-out 0.2s;
-      opacity: 80%;
+      color: ${Colors.mainColor};
     }
   }
 `

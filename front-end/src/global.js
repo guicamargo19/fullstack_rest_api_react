@@ -30,6 +30,11 @@ export const EstiloGlobal = createGlobalStyle`
     body {
         background: linear-gradient(to right,#f5f5f5cc,#f5f5f5cc),url(https://servidor-estatico-tan.vercel.app/common-bg.svg);
         background-position: center;
+        height: 100vh;
+
+        .center {
+            margin: 30px auto;
+        }
     }
 
     .container {
@@ -43,6 +48,7 @@ export const EstiloGlobal = createGlobalStyle`
             font-size: 50px;
             width: 566px;
             margin: 0 45%;
+            color: ${Colors.mainColor}
         }
 
         hr {
@@ -51,7 +57,7 @@ export const EstiloGlobal = createGlobalStyle`
             margin-top: -34px;
             margin-bottom: 150px;
             border: none;
-            background-color: ${Colors.blackColor}
+            background-color: ${Colors.mainColor}
         }
 
         h2 {

@@ -5,6 +5,8 @@ import RemoveProductButton from '../RemoveProductButton'
 import UpdateProductButton from '../UpdateProductButton'
 import UpdateProductForm from '../UpdateProductForm'
 import AddProductForm from '../AddProductForm'
+import { HashLoader, PropagateLoader } from 'react-spinners'
+import { Colors } from '../../global'
 
 const fetchProducts = async () => {
   const response = await fetch('http://localhost:8000/api/products/')
@@ -68,29 +70,39 @@ const ProductsList = () => {
     return (
       <>
         <h2>Lista de Produtos</h2>
-        <S.Carregando>Carregando...</S.Carregando>
+        <HashLoader color={Colors.mainColor} className="center" />
       </>
     )
   if (isError)
     return (
       <>
         <h2>Lista de Produtos</h2>
-        <S.Erro>Ocorreu um erro ao carregar os produtos...</S.Erro>
+        <S.Erro>Ocorreu um erro ao carregar os produtos 😔</S.Erro>
       </>
     )
 
   return (
     <>
       <S.ButtonsContainer>
-        <button className="add" onClick={handleToggleAddProductForm}>
+        <button
+          className="add"
+          onClick={handleToggleAddProductForm}
+          alt="Adicionar produto"
+        >
           Adicionar produto
         </button>
         {isAddProductFormVisible && (
           <AddProductForm onClose={() => setIsAddProductFormVisible(false)} />
         )}
-        <button className="remove" onClick={handleRemoveAllProducts}>
-          Remover todos
-        </button>
+        {products.length !== 0 && (
+          <button
+            className="remove"
+            onClick={handleRemoveAllProducts}
+            alt="Remover todos os produtos"
+          >
+            Remover todos
+          </button>
+        )}
       </S.ButtonsContainer>
       <h2>Lista de Produtos</h2>
       {products.length === 0 ? (
@@ -131,17 +143,24 @@ const ProductsList = () => {
           ))}
         </S.ProductListContainer>
       )}
-      {/* Renderize o modal de confirmação se showConfirmation for true */}
+      {/* Renderiza o modal de confirmação se showConfirmation for true */}
       {showConfirmation && (
         <S.ModalOverlay>
           <S.ModalContainer>
             <S.ModalContent>
               <p>Deseja realmente remover todos os produtos?</p>
+              <PropagateLoader color={Colors.mainColor} />
               <S.ModalActions>
-                <button className="sim" onClick={confirmRemoveAllProducts}>
+                <button
+                  className="sim"
+                  onClick={confirmRemoveAllProducts}
+                  alt="Sim"
+                >
                   Sim
                 </button>
-                <button onClick={() => setShowConfirmation(false)}>Não</button>
+                <button onClick={() => setShowConfirmation(false)} alt="Não">
+                  Não
+                </button>
               </S.ModalActions>
             </S.ModalContent>
           </S.ModalContainer>
