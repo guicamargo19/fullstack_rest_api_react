@@ -1,4 +1,4 @@
-# Desafio Técnico BNEX
+# REST API Operações CRUD
 
 <img src="https://servidor-estatico-tan.vercel.app/produtos.png"/>
 
@@ -102,6 +102,30 @@ a partir dele, deve-se criar o arquivo ".env" que deve ser preenchido com variá
 com configurações necessárias para o banco de dados PostgreSQL. Certifique-se de criar este
 arquivo no mesmo local do exemplo, preenchendo com dados iguais aos do arquivo docker-compose.yml.
 
+## Nodemon
+
+O nodemon é uma ferramenta de desenvolvimento para aplicativos Node.js que monitora mudanças nos arquivos
+do seu projeto e automaticamente reinicia o servidor quando detecta uma alteração. Eliminando assim a
+necessidade de manualmente parar e reiniciar o servidor a cada vez que você faz uma modificação no código.
+
+- Instalação
+```shell
+npm install --save-dev nodemon
+```
+- Adicionar ao Dockerfile do Front-end:
+```shell
+RUN npm install -g nodemon
+```
+- Adicionar "volumes" no docker-compse-yml na infraestrutura front-end-server:
+```shell
+volumes:
+  - ../front-end:/app   # Diretório atual montado em /app no contêiner
+```
+- Adicionar em scripts no arquivo package.json o seguinte comando:
+```shell
+"scripts": {
+    "start": "nodemon --exec react-scripts start", } 
+```
 ## Testes
 
 Foram implementados testes para verificar a integridade do Model, das Views e do

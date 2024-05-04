@@ -16,6 +16,7 @@ WORKDIR /app
 COPY requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Para aguardar o banco de dados subir. (pg_isready)
 RUN apk update && \
     apk add --no-cache postgresql-client
 

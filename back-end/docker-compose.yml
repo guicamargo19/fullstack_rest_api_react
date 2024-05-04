@@ -40,6 +40,8 @@ services:
       - "3000:3000"
     networks:
       - front-end-server-network
+    volumes:
+      - ../front-end:/app   # Diretório atual montado em /app no contêiner
 
 networks:
   back-end-server-network:
