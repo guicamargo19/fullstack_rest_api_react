@@ -178,6 +178,11 @@ O Back-End é hospedado na porta 8000: [http://localhost:8000/api/products](http
 
 ## API
 
+A interface JavaScript utilizada para para lidar com requisições e respostas HTTP é a Fetch API. Ela
+fornece uma maneira mais poderosa e flexível de dazer solicitações de rede. Alguns pontos fortes são a
+simplicidade, as funções retornam promessas, o que permite o uso do métodos ".then()" e ".catch()" para lidar
+com as respostas de forma assíncrona, suporte a CORS, permitindo que façamos solicitações de diferentes domínios e etc.
+
 ## API Endpoint: Listar produtos
   **GET /api/produtos**
 
