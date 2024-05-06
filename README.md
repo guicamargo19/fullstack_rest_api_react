@@ -116,7 +116,7 @@ npm install --save-dev nodemon
 ```shell
 RUN npm install -g nodemon
 ```
-- Adicionar "volumes" no docker-compse-yml na infraestrutura front-end-server:
+- Adicionar "volumes" no docker-compose.yml na infraestrutura front-end-server:
 ```shell
 volumes:
   - ../front-end:/app   # Diretório atual montado em /app no contêiner
