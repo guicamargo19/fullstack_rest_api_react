@@ -1,6 +1,6 @@
-# REST API Operações CRUD
+# REST API Operações CRUD com ReactJS
 
-<img src="https://servidor-estatico-tan.vercel.app/rest_api.avif"/>
+<img src="https://servidor-estatico-tan.vercel.app/rest_api_react.avif"/>
 
 O projeto viabiliza a criação de um elemento Produto, com a integral preservação de todos os seus dados. Através de uma
 interface Front-end simples, minimalista e intuitiva, construída com **ReactJS**, são executáveis operações CRUD (Create, Read, Update, Delete).
