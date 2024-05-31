@@ -1,6 +1,6 @@
 # REST API Operações CRUD com ReactJS
 
-<img src="https://servidor-estatico-tan.vercel.app/rest_api_react.avif"/>
+https://github.com/guicamargo19/fullstack_rest_api_react/assets/133445061/40622e4d-b4b1-4e10-b263-b2e0a1d7adf9
 
 O projeto viabiliza a criação de um elemento Produto, com a integral preservação de todos os seus dados. Através de uma
 interface Front-end simples, minimalista e intuitiva, construída com **ReactJS**, são executáveis operações CRUD (Create, Read, Update, Delete).
@@ -47,7 +47,7 @@ Siga as etapas a seguir para configurar o ambiente de desenvolvimento:
 
 - Clone este repositório em sua máquina local.
 ```bash
-git clone https://github.com/guicamargo19/bnex-desafio-tecnico
+https://github.com/guicamargo19/fullstack_rest_api_react.git
 ```
 </div>
 <div id="rodando-o-projeto">
@@ -70,7 +70,7 @@ docker-compose up --build
 
 1. Navegue até o diretório clonado
 ```shell
-cd bnex-desafio-tecnico
+cd fullstack_rest_api_react
 ```
 2. Crie e ative o ambiente virtual,(comandos podem variar entre Windows, Linux e Mac.)
 ```shell
