@@ -1,7 +1,5 @@
 FROM python:3.12.0-alpine3.18
 
-LABEL mantainer="gui.ferreira.camargo@gmail.com"
-
 # Python
 ENV PYTHONUNBUFFERED=1 \
     # previne criação de arquivo .pyc pelo python

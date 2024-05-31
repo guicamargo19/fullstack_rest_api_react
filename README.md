@@ -54,10 +54,9 @@ git clone https://github.com/guicamargo19/bnex-desafio-tecnico
 
 ## Rodando o projeto no Docker
 
-1. Acesse a pasta back-end/dotenv_files e crie o arquivo ".env" a partir do ".env-example". 
-Os dados devem ser os mesmos presentes no arquivo docker-compose.yml.
+1. Acesse a pasta back-end e crie o arquivo ".env" a partir do ".env-example".
 ```shell
-cd back-end/dotenv_files
+cd back-end
 ```
 2. Acesse a pasta back-end na raiz e execute o comando a seguir e certifique-se de que o Docker Desktop está aberto.
 ```shell
@@ -97,10 +96,10 @@ npm install
 
 ## Dotenv file (.env)
 
-No diretório back-end/dotenv_files é possível encontrar o arquivo ".env_example", sendo que,
+No diretório back-end é possível encontrar o arquivo ".env_example", sendo que,
 a partir dele, deve-se criar o arquivo ".env" que deve ser preenchido com variáveis de ambiente
 com configurações necessárias para o banco de dados PostgreSQL. Certifique-se de criar este
-arquivo no mesmo local do exemplo, preenchendo com dados iguais aos do arquivo docker-compose.yml.
+arquivo no mesmo local do exemplo.
 
 ## Nodemon
 
@@ -311,8 +310,8 @@ sh -c "until pg_isready -h db-server -U backend_user; do
               echo waiting for database;
               sleep 2;
              done;
-             python manage.py makemigrations &&
-             python manage.py migrate &&
+             python manage.py makemigrations --noinput &&
+             python manage.py migrate --noinput &&
              python manage.py runserver 0.0.0.0:8000"
 ````
 </div>

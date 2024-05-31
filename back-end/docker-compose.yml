@@ -1,18 +1,15 @@
 services:
   db-server:
     image: postgres:latest
-    environment:
-      POSTGRES_LOGGING: 'debug5'
-      POSTGRES_DB: backend_db
-      POSTGRES_USER: backend_user
-      POSTGRES_PASSWORD: backend_password
     volumes:
       - db-server-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     networks:
       - back-end-server-network
-    env_file:
-      - ./dotenv_files/.env
-      
+    
   back-end-server:
     build: .
     command: >
@@ -20,13 +17,11 @@ services:
               echo waiting for database;
               sleep 2;
              done;
-             python manage.py makemigrations &&
-             python manage.py migrate &&
+             python manage.py makemigrations --noinput &&
+             python manage.py migrate --noinput &&
              python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/app
-    env_file:
-      - ./dotenv_files/.env
     ports:
       - "8000:8000"
     networks:
